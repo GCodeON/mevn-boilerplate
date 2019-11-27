@@ -1,6 +1,5 @@
 <template>
   <div id="root">
-    <h2>Test</h2>
     <component v-bind:is="layout"></component>
   </div>
 </template>

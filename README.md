@@ -1,4 +1,4 @@
-# Privacy Policy System
+# MEVN Boilerplate
 
 ## Project setup
 ```
