@@ -1,0 +1,39 @@
+
+/*
+||--------------------------||
+||         Palette          ||
+||--------------------------||
+*/
+$color-primary   : #29CBA7;
+$color-secondary : #B0FF00;
+$white           : rgb(250, 250, 250);
+$black           : rgb(50, 50, 50);
+
+/*
+||--------------------------||
+||     Responsiveness       ||
+||--------------------------||
+*/
+
+$breakpoints: (
+  'small'   : ( min-width:  767px ),
+  'medium'  : ( min-width:  992px ),
+  'large'   : ( min-width: 1024px ),
+  'xlarge'  : ( min-width: 1200px ),
+  'xxlarge' : ( min-width: 1440px )
+);
+
+/*
+||--------------------------||
+||         Effects          ||
+||--------------------------||
+*/
+$box-shadow-main : 0px 2px 4px rgba(0, 0, 0, 0.5);
+
+
+/*
+||--------------------------||
+||        Transitions       ||
+||--------------------------||
+*/
+$responsive-transition-duration : 1s;

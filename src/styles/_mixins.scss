@@ -1,0 +1,43 @@
+
+@mixin breakpoint($name) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $name) {
+        // Prints a media query based on the value
+        @media #{inspect(map-get($breakpoints, $name))} {
+        @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Please make sure it is defined in `$breakpoints` map.";
+    }
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+    $src : null;
+
+    $extmods : (
+            eot : "?",
+            svg : "#" + str-replace($name, " ", "_")
+    );
+
+    $formats : (
+            otf : "opentype",
+            ttf : "truetype"
+    );
+
+    @each $ext in $exts {
+        $extmod : if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+        $format : if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+        $src    : append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+    }
+
+    @font-face {
+        font-family : quote($name);
+        font-style  : $style;
+        font-weight : $weight;
+        src         : $src;
+    }
+}
